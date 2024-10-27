@@ -6,15 +6,17 @@ class Nave(models.Model):
     local_queda = models.CharField(max_length=255) # Rua, Parque, Floresta, Lago, Mar, Comércio, Escola, Hospital, Aeroporto, Base Militar
     armamento = models.CharField(max_length=255) # Nenhum, Leve, Médio, Pesado, Nuclear
     combustivel= models.CharField(max_length=255) # Biocombustível, Antimatéria, Plasma, Energia Solar, Hidrogênio, Elétrico, Óleo, Gás
-    tripulantes = models.CharField(max_length=255) #Decidir se é um campo de texto ou um dicionario de tripulantes e estado
+    tripulantes = models.CharField(max_length=255) 
     avaria = models.CharField(max_length=255) # Perda total, Muito destruída, Parcialmente destruída, Praticamente intacta e Sem avarias
     potencial_prospecção_tecnologico = models.IntegerField() # 0 a 10
     periculosidade = models.IntegerField() # 0 a 10
-    etiquetas = models.CharField(max_length=255) # Adicionar as etiquetas de acordo com as condições
+    etiquetas = models.CharField(max_length=255)
        
 
 class Pato:
     
+    movimento = models.CharField(max_length=255) # Quackando, Nadando, Conversando, Usando um celular, Próximo ao notebook
+    suspeito = models.BooleanField()
     pele_esverdeada = models.BooleanField()
     bico_pequeno = models.BooleanField()
     sotaque_esquisito = models.BooleanField()

@@ -60,11 +60,16 @@ def naves(request):
 def patos(request):
     novo_pato = Pato()
 
+    novo_pato.movimento = request.POST.get('movimentos')
     novo_pato.pele_esverdeada = request.POST.get('pele_esverdeada')
     novo_pato.bico_pequeno = request.POST.get('bico_pequeno')
     novo_pato.sotaque_esquisito = request.POST.get('sotaque_esquisito')
     novo_pato.local = request.POST.get('local')
     novo_pato.quantidade = request.POST.get('quantidade')
+    if novo_pato.movimento == "Quackando" or novo_pato.movimento == "Nadando":
+        novo_pato.suspeito = False
+    else:
+        novo_pato.suspeito = True
     if novo_pato.pele_esverdeada and novo_pato.bico_pequeno and novo_pato.sotaque_esquisito:
         novo_pato.xenofago = True
         if novo_pato.quantidade == "Sozinho":
